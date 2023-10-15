@@ -20,8 +20,8 @@ jobs:
 
       - name: Run build
         run: |
-          docker build --rm --no-cache --progress plain --platform linux/amd64 --tag sensebank/tests:graalvm-project-native .
+          docker build --rm --no-cache --progress plain --platform linux/amd64 --tag sensebank/tests:graalvm-project-jar .
 
       - name: Run push
         run: |
-          docker push sensebank/tests:graalvm-project-native
+          docker push sensebank/tests:graalvm-project-jar
