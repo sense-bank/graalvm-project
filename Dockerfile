@@ -2,7 +2,7 @@ FROM container-registry.oracle.com/graalvm/native-image:17-ol8 as builder
 WORKDIR /build
 COPY . /build
 #RUN ./mvnw --no-transfer-progress native:compile -Pnative -DskipTests -march=compatibility
-RUN ./mvnw -U clean install -DskipTests
+RUN ./mvnw -U --no-transfer-progress clean install -DskipTests
 
 #FROM container-registry.oracle.com/os/oraclelinux:8-slim
 FROM gcr.io/distroless/java17-debian12
