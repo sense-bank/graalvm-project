@@ -2,7 +2,7 @@ FROM vegardit/graalvm-maven:latest-java17 as builder
 WORKDIR /app
 COPY pom.xml /app/
 COPY src /app/src/
-RUN mvn -Pnative native:compile -DskipTests
+RUN mvn --no-transfer-progress native:compile -Pnative -DskipTests
 #RUN mvn -U clean install -DskipTests
 
 FROM mirekphd/jenkins-jdk17-on-ubuntu2204:latest
