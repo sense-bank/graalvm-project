@@ -52,6 +52,18 @@
 			<plugin>
 				<groupId>org.graalvm.buildtools</groupId>
 				<artifactId>native-maven-plugin</artifactId>
+				<configuration>
+					<imageName>${project.name}</imageName>
+					<fallback>false</fallback>
+					<verbose>true</verbose>
+					<quickBuild>true</quickBuild>
+					<buildArgs>
+						<arg>-H:+ReportExceptionStackTraces</arg>
+					</buildArgs>
+					<metadataRepository>
+						<enabled>true</enabled>
+					</metadataRepository>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
